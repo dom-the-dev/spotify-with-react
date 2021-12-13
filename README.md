@@ -1,4 +1,4 @@
-#How To Use The Spotify API In React
+# How To Use The Spotify API In React
 
 ## Available Scripts
 
