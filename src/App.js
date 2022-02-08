@@ -3,8 +3,8 @@ import './App.css';
 import axios from 'axios';
 
 function App() {
-    const CLIENT_ID = "1156e74e343f472582fb8a08e6a9d81d"
-    const REDIRECT_URI = "http://localhost:3000"
+    const CLIENT_ID = "b39c9c2f4fa346a69e4cdbcafefd5185"
+    const REDIRECT_URI = "http://localhost:3001"
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
     const RESPONSE_TYPE = "token"
 
@@ -12,9 +12,17 @@ function App() {
     const [searchKey, setSearchKey] = useState("")
     const [artists, setArtists] = useState([])
 
+    // const getToken = () => {
+    //     let urlParams = new URLSearchParams(window.location.hash.replace("#","?"));
+    //     let token = urlParams.get('access_token');
+    // }
+
     useEffect(() => {
         const hash = window.location.hash
         let token = window.localStorage.getItem("token")
+
+        // getToken()
+
 
         if (!token && hash) {
             token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
